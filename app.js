@@ -1,8 +1,8 @@
-$(document).ready(function(){
-    $('.burger').click(function(){
-        $('ul').toggleClass('active');
-    })
-})
+// $(document).ready(function(){
+//     $('.burger').click(function(){
+//         $('ul').toggleClass('active');
+//     })
+// })
 
 
 
