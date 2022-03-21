@@ -1,18 +1,11 @@
-// $(document).ready(function(){
-//     $('.burger').click(function(){
-//         $('ul').toggleClass('active');
-//     })
-// })
+const menu = document.querySelector('.nav-menu')
+const  burger = document.querySelector('.burger')
 
 
 
-// const navSlide = () => {
-//     const burger = document.querySelector('.burger');
-//     const nav = document.querySelector('ul');
+const toggleMenu = () => {
+    menu.classList.toggle("show");
+}
 
-//     burger.addEventListener('click',()=>{
-//         nav.classList.toggle('ul:active');
-//     });
-// }
 
-// navSlide();
+burger.addEventListener('click', toggleMenu)

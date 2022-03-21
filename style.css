@@ -3,8 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-li a:active {
+body {
+  background-color: rgba(238, 211, 215, 0.411);
+}
+li a:active,
+li a:hover {
   color: black;
   border-bottom: 2px solid black;
   font-weight: bold;
@@ -14,52 +17,67 @@ nav {
   display: flex;
   justify-content: space-around;
   background-color: white;
-  height: 70px;
-  margin-top: 10px;
+  height: 100px;
+  padding: 0 7vw;
+  position: sticky;
+  top: 0.1px;
 }
 
 .logo {
+  align-items: center;
   display: inline-flex;
+  flex: 1;
 }
 
 .logo img {
   width: 90px;
-  height: 70px;
 }
 
 .logo p {
   font-size: 15px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  margin-top: 20px;
-  margin-right: 5px;
   letter-spacing: 3px;
 }
 
 nav ul {
   display: flex;
-  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  flex: 3;
 }
 
 ul li {
   list-style: none;
+  margin: 0 10px;
+  text-align: center;
 }
 
 li a {
   text-decoration: none;
   color: grey;
-  justify-content: space-evenly;
-  margin-left: 10px;
-  margin-right: 10px;
+  justify-content: center;
   font-family: serif;
+  transition: border all 0.2 ease;
 }
 
 .btn {
   display: inline-flex;
-  margin-left: 150px;
+  display: flex;
+  align-items: center;
+  flex: 2;
+  justify-content: end;
 }
 
 form {
-  max-width: 250px;
+  position: relative;
+  margin-right: 20px;
+}
+
+form .search {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translate(-5%, -50%);
 }
 
 .btn-1 {
@@ -68,12 +86,6 @@ form {
 
 .icon {
   width: 20px;
-}
-
-.btn-1 img {
-  position: absolute;
-  right: 110px;
-  top: 15px;
 }
 
 .Field {
@@ -91,10 +103,9 @@ form {
 
 .hero {
   display: flex;
-  padding: 80px 100px;
-  width: 95vw;
+  padding: 30px 100px;
+  width: 100vw;
   height: 100vh;
-  background-color: rgba(238, 211, 215, 0.411);
   gap: 50px;
   margin: 0 auto;
   margin-top: 5px;
@@ -177,24 +188,17 @@ form {
   height: 50px;
 }
 
-.container2 {
-  max-width: 500px;
-  height: 80px;
-}
-
 .container3 {
-  max-width: 150px;
-  height: 40px;
+  display: block;
 }
 
-.container2 img,
-.container3 img {
-  width: 100%;
+.container2 img {
+  width: 30vw;
   border-radius: 50%;
 }
-
-.hero .container3 {
-  display: block;
+.container3 img {
+  width: 10vw;
+  border-radius: 50%;
 }
 
 .burger {
@@ -209,391 +213,122 @@ form {
   margin: 8px;
 }
 
-@media screen and (max-width: 1024px) {
-  nav ul {
-    width: 250px;
-  }
-  .hero {
-    padding-left: 10px;
-  }
-  .container2 {
-    height: 80px;
-    margin-top: 60px;
-  }
-
-  .container3 {
-    max-width: 200px;
-    height: 40px;
-  }
-
-  .container2 img {
-    width: 300px;
-  }
-
-  .container3 img {
-    width: 150px;
-    border-radius: 50%;
-  }
-
-  .hero .container3 {
-    display: block;
-  }
+.flex {
+  display: flex;
 }
 
-@media screen and (max-width: 1024px) {
-  body {
-    overflow-x: visible;
-  }
-  .hero {
-    padding-top: 10px;
-    padding-bottom: 50px;
-    padding-left: 5px;
-    width: 100vw;
-    display: block;
-    position: relative;
-  }
-
-  .hero .container3 {
-    display: flex;
-  }
-
-  .banner {
-    width: 400px;
-    height: 450px;
-  }
-
-  .hero p {
-    font-size: 13px;
-    color: grey;
-  }
-
-  .container2 {
-    width: 100px;
-    height: 40px;
-  }
-
-  .container3 {
-    width: 150px;
-    height: 40px;
-  }
-
-  .container2 img {
-    width: 200px;
-    position: absolute;
-    top: 130px;
-    left: 90px;
-  }
-
-  .container3 img {
-    width: 100px;
-    border-radius: 50%;
-    position: relative;
-    left: 40px;
-    top: -30px;
-  }
-}
-@media screen and (max-width: 768px) {
-  body {
-    overflow-x: hidden;
-  }
-  .logo {
-    display: inline;
-    padding-left: 20px;
-    position: absolute;
-    left: 0px;
-  }
-
-  .logo p {
-    position: absolute;
-    top: 50px;
-    left: 20px;
-  }
-
+@media screen and (max-width: 1000px) {
   nav {
-    height: 12vh;
+    padding: 0 2vw;
+    z-index: 1;
   }
 
   nav ul {
-    display: flex;
-    position: absolute;
-    right: 0px;
-    height: 92vh;
-    background-color: rgb(255, 0, 0);
-    display: flex;
+    justify-content: left;
+    position: fixed;
+    height: calc(100vh - 100px);
+    width: 200px;
+    z-index: 1;
+    right: 0;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px #00704a;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     flex-direction: column;
-    align-items: left;
-    width: 50%;
-    transform: translateX(100%);
-    transition: 0.5s ease-in;
+    margin-top: 100px;
+    transform: translateX(250px);
+    transition: 0.2 all cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
-  nav li {
-    opacity: 0;
-    font-size: 12px;
+  ul li {
+    margin: 10px;
   }
 
-  .btn-1 {
-    max-width: 2px;
-    position: absolute;
-    left: 180px;
-    top: 25px;
+  li a {
+    font-size: large;
   }
 
-  .btn-1 img {
-    position: absolute;
-    top: 10px;
-    left: 250px;
-  }
-
-  .btn span {
-    position: absolute;
-    top: 25px;
-    right: 240px;
-  }
-
-  .burger {
-    display: inline-block;
-    margin-top: 10px;
-    cursor: pointer;
-    padding-left: 180px;
-  }
-
-  .burger div {
-    padding-left: 0px;
-  }
-
-  .Field {
-    position: relative;
-    left: 90px;
-    height: 40px;
-    width: 200px;
-  }
-
-  .hero {
-    padding-top: 10px;
-    padding-bottom: 50px;
-    padding-left: 5px;
-    width: 100vw;
-    display: block;
-    position: relative;
-  }
-
-  .hero .container3 {
-    display: flex;
-  }
-
-  .banner {
-    width: 400px;
-    height: 450px;
-  }
-
-  .hero p {
-    font-size: 15px;
-    color: grey;
-  }
-
-  .container2 {
-    width: 100px;
-    height: 40px;
-  }
-
-  .container3 {
-    width: 150px;
-    height: 40px;
-  }
-
-  .container2 img {
-    width: 200px;
-    position: absolute;
-    top: 150px;
-    left: 90px;
-  }
-
-  .container3 img {
-    width: 100px;
-    border-radius: 50%;
-    position: relative;
-    left: 40px;
-    top: -30px;
-  }
-
-  .banner3 {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 0px;
-  }
-
-  .banner3 .sum {
-    width: 150px;
-  }
-}
-
-@media screen and (max-width: 688px) {
-  .btn span {
-    position: absolute;
-    top: 25px;
-    right: 160px;
-  }
-
-  .burger {
-    padding-left: 350px;
-  }
-}
-
-@media screen and (max-width: 575px) {
-  body {
-    overflow-x: hidden;
-  }
-
-  .logo {
-    display: inline;
-    padding-left: 20px;
-    position: absolute;
-    left: 0px;
+  .show {
+    transform: translateX(0);
   }
 
   .logo p {
-    position: absolute;
-    top: 50px;
-    left: 20px;
-  }
-
-  nav {
-    height: 12vh;
-  }
-
-  nav ul {
-    display: none;
-    position: absolute;
-    right: 0px;
-    height: 92vh; 
-  }
-
-  nav li {
-    opacity: 0;
-  }
-
-  .btn-1 {
-    max-width: 2px;
-    position: absolute;
-    left: 180px;
-    top: 25px;
-  }
-
-  .btn-1 img {
-    position: absolute;
-    top: 10px;
-    right: -39px;
     display: none;
   }
 
-  .btn span {
-    position: absolute;
-    top: 25px;
-    right: 145px;
+  .btn {
+    justify-content: space-around;
+    /* margin-left: 150px; */
   }
 
   .burger {
-    display: inline-block;
-    margin-top: 10px;
-    cursor: pointer;
-    padding-left: 180px;
-  }
-
-  .burger div {
-    padding-left: 0px;
-  }
-
-  .Field {
-    position: relative;
-    right: 40px;
-    height: 40px;
-    width: 80px;
-  }
-
-  .hero {
-    padding-top: 10px;
-    padding-bottom: 50px;
-    padding-left: 5px;
-    width: 100vw;
     display: block;
-    position: relative;
-  }
-
-  .hero .container3 {
-    display: flex;
-  }
-
-  .banner {
-    width: 400px;
-    height: 450px;
-  }
-
-  .hero p {
-    font-size: 13px;
-    color: grey;
-  }
-
-  .container2 {
-    width: 100px;
-    height: 40px;
-  }
-
-  .container3 {
-    width: 150px;
-    height: 40px;
-  }
-
-  .container2 img {
-    width: 200px;
-    position: absolute;
-    top: 130px;
-    left: 90px;
-  }
-
-  .container3 img {
-    width: 100px;
-    border-radius: 50%;
-    position: relative;
-    left: 40px;
-    top: -30px;
-  }
-
-  .banner3 {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 0px;
-  }
-
-  .banner3 .sum {
-    width: 150px;
-  }
-
-  .sum p {
-    font-weight: bolder;
-    font-size: 20px;
-    margin: auto;
-  }
-
-  .cart {
-    width: 150px;
-  }
-
-  nav ul:active {
-    transform: translateX(0%);
   }
 }
 
-@media screen and (max-width: 395px) {
-  .btn span {
-    position: absolute;
-    top: 25px;
-    left: 220px;
+@media screen and (max-width: 500px) {
+  .btn-cart {
+    display: none;
   }
 
-  .banner3 {
+  nav {
+    z-index: 1;
+  }
+
+  .hero {
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .banner {
+    width: 350px;
+  }
+  .container2 {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+  }
+
+  .container2 img {
+    width: 150px;
+  }
+
+  .container3 img {
+    width: 90px;
+  }
+
+  .container3 {
     display: flex;
-    justify-content: center;
-    gap: 5px;
+    position: absolute;
+    top: 48%;
+    left: 15%;
+  }
+
+  .break {
+    margin-top: 350px;
+  }
+  .banner3 {
+    display: block;
+  }
+
+  .sum {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container2 {
+    margin-top: 30px;
+  }
+
+  .container3 {
+    padding-top: 50px;
+  }
+
+  .break {
+    padding-top: -200px;
   }
 }
